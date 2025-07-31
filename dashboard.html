@@ -28,6 +28,36 @@
     .dark .text-black { color: white !important; }
     .dark .bg-white { background-color: #1f2937 !important; }
     .dark .bg-gray-200 { background-color: #374151 !important; }
+    @keyframes shimmer {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%);  }
+  }
+
+  .shimmer-wrapper{
+    position:relative;
+    overflow:hidden;
+    /* glassy gradient base – tweak to taste */
+    background-image:linear-gradient(to right,#1e293b,#334155,#1e293b);
+    border:2px solid #00ffff;                   /* neon line */
+    border-radius:0.75rem;
+    box-shadow:
+      inset 4px 4px 8px rgba(255,255,255,.08),  /* upper-left highlight */
+      inset -4px -4px 8px rgba(0,0,0,.45),      /* lower-right shadow  */
+      0 0 25px rgba(0,255,255,.35);             /* outer glow          */
+  }
+
+  .shimmer-wrapper::before{
+    content:'';
+    position:absolute;top:0;left:-150%;
+    width:150%;height:100%;
+    background:linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,.25),
+      transparent
+    );
+    animation:shimmer 2s infinite linear;
+    pointer-events:none;
   </style>
 </head>
 <body class="font-sans relative text-white">
@@ -91,11 +121,12 @@
 
 
 
-   <!-- Dashboard Content -->
-    <main class="ml-64 flex-1 p-8 overflow-y-auto animate-fade-in space-y-10 bg-gray text-black">
-      <div class="w-full bg-gradient-to-r from-gray-800 via-gray-600 to-gray-300 text-white shadow-inner py-4 px-6 rounded mb-6 border-2 border-cyan-400 shadow-cyan-500/50">
-    <h1 class="text-3xl font-semibold drop-shadow-md">Dashboard</h1>
-  </div>
+  <!-- Dashboard Content -->
+    <main class="ml-64 flex-1 p-8 overflow-y-auto animate-fade-in space-y-10 bg-gray text-white">
+     <!-- ✨ 3-D neon shimmer top bar -->
+<div class="shimmer-wrapper w-full py-4 px-6 mb-6">
+  <h1 class="text-3xl font-semibold drop-shadow-md">Dashboard</h1>
+</div>
 
 
 
