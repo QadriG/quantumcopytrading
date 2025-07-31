@@ -86,6 +86,39 @@
     .dark .bg-white { background-color: #1f2937 !important; }
     .dark .bg-gray-200 { background-color: #374151 !important; }
   </style>
+  <script>
+  // Load audio file
+  const hoverSound = new Audio("assets/click.mp3");
+
+  // Function to attach sound to buttons
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".sidebar-button");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("mouseenter", () => {
+        hoverSound.currentTime = 0;
+        hoverSound.play();
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Bounce / Spring (4D bump) effect */
+  .hover\:bump:hover {
+    transform: translateY(-4px) scale(1.05);
+    transition: all 0.2s ease-out;
+  }
+
+  .sidebar-button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .sidebar-button:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.4);
+  }
+</style>
 </head>
 
 <body class="font-sans relative text-white">
@@ -110,6 +143,7 @@
 
     <!-- Cyan - Dashboard -->
 <a href="dashboard.html"
+   onmouseenter="playHoverSound()"
    class="px-4 py-2 rounded bg-gray-900 text-white border border-cyan-400 
           shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_4px_6px_rgba(0,0,0,0.4)] 
           hover:shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_0_20px_5px_rgba(34,211,238,0.8)] 
