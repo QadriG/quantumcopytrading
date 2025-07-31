@@ -87,13 +87,10 @@
     .dark .bg-gray-200 { background-color: #374151 !important; }
   </style>
   <script>
-  const hoverSound = document.getElementById("hoverSound");
-
-  function playHoverSound() {
+   function playHoverSound() {
+    const hoverSound = document.getElementById("hoverSound");
     hoverSound.currentTime = 0;
-    hoverSound.play().catch((e) => {
-      console.warn("Audio play blocked:", e);
-    });
+    hoverSound.play().catch(() => {});
   }
 
   // Attach to all sidebar buttons
@@ -121,9 +118,7 @@
 
 <body class="font-sans relative text-white">
 
-  <audio id="hoverSound" src="assets/click.mp3" preload="auto"></audio>
-
-
+  
   <!-- 🌌 Background Video -->
   <video autoplay muted loop playsinline class="fixed top-0 left-0 w-full h-full object-cover z-[-10] brightness-90 blur-sm">
     <source src="assets\bg.mp4" type="video/mp4" />
@@ -135,14 +130,14 @@
 
   <!-- 📦 Main Content -->
   <div class="relative z-10">
-
+<audio id="hoverSound" src="assets/click.mp3" preload="auto"></audio>
 
 <!-- Sidebar -->
 <div class="fixed left-0 top-0 h-full w-64 bg-black/70 text-white p-4 z-50 rounded-r-xl border-r-4 border-cyan-400 shadow-[0_0_15px_#22d3ee]">
   <h2 class="text-xl font-bold mb-6 text-cyan-300 drop-shadow-md">QuantumCopyTrading</h2>
   <nav class="flex flex-col space-y-3">
 
-  <a href="dashboard.html"
+ <a href="dashboard.html"
    onmouseenter="playHoverSound()"
    class="px-4 py-2 rounded bg-gray-900 text-white border border-cyan-400 
           shadow-inner shadow-md hover:shadow-[0_0_20px_5px_rgba(34,211,238,0.8)] 
