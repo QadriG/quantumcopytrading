@@ -129,7 +129,7 @@
   <nav class="flex flex-col space-y-3">
 
  <!-- Cyan - Dashboard -->
-<a href="dashboard.html" class="sidebar-link px-4 py-2 rounded bg-gray-900 text-white border border-cyan-400 
+<a href="dashboard.html" class="px-4 py-2 rounded bg-gray-900 text-white border border-cyan-400 
           shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_4px_6px_rgba(0,0,0,0.4)] 
           hover:shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_0_20px_5px_rgba(34,211,238,0.8)] 
           transition-all duration-300 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 hover:bump onmouseenter="playHoverSound()"">
@@ -578,9 +578,9 @@ new Chart(revenueCtx, {
       }
     }
 
-    // 🔊 Only apply to sidebar links
-    const sidebarLinks = document.querySelectorAll("#sidebar .sidebar-link");
-    sidebarLinks.forEach(el => {
+    // Apply to all hover targets
+    const targets = document.querySelectorAll("button, a, tr");
+    targets.forEach(el => {
       el.addEventListener("mouseenter", playSound);
     });
 
@@ -588,6 +588,7 @@ new Chart(revenueCtx, {
 
 </body>
 </html>
+
 
 
 
