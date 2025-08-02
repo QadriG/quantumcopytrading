@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hover Sound Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes bump {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .hover-bump:hover {
+      animation: bump 0.2s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white p-10">
+
+  <!-- 🔊 Hosted on GitHub Pages: use full path or relative if root is correct -->
+  <audio id="hover-sound" preload="auto">
+    <source src="assets/click.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="bg-blue-600 px-6 py-2 rounded hover-bump m-4">Hover Me</button>
+  <a class="block bg-gray-700 p-3 rounded hover-bump m-4" href="#">Sidebar Link</a>
+
+  <script>
+    const audio = document.getElementById("hover-sound");
+
+    // User must click at least once to allow sound (browser rule)
+    document.body.addEventListener('click', () => {
+      audio.play().then(() => {
+        audio.pause();
+        audio.currentTime = 0;
+      }).catch(e => console.log('Interaction required for audio'));
+    }, { once: true });
+
+    function playSound() {
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      }
+    }
+
+    // Apply to all hover targets
+    const targets = document.querySelectorAll("button, a, tr");
+    targets.forEach(el => {
+      el.addEventListener("mouseenter", playSound);
+    });
+  </script>
+
+</body>
+</html>
