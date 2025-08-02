@@ -148,8 +148,8 @@
 </a>
 
 
-<!-- Purple - Analytics -->
-<a href="analytics.html"
+<!-- Purple - Settings -->
+<a href="settings.html"
    class="px-4 py-2 rounded bg-gray-900 text-white border border-purple-400 
           shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_4px_6px_rgba(0,0,0,0.4)] 
           hover:shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_0_20px_5px_rgba(192,132,252,0.8)] 
@@ -157,8 +157,8 @@
   Settings
 </a>
 
-<!-- Green - Signals -->
-<a href="signals.html"
+<!-- Green - Api -->
+<a href="api.html"
    class="px-4 py-2 rounded bg-gray-900 text-white border border-green-400 
           shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_4px_6px_rgba(0,0,0,0.4)] 
           hover:shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_0_20px_5px_rgba(74,222,128,0.8)] 
@@ -166,8 +166,8 @@
   API Details
 </a>
 
-<!-- Yellow - Reports -->
-<a href="reports.html"
+<!-- Yellow - Positions -->
+<a href="positions.html"
    class="px-4 py-2 rounded bg-gray-900 text-white border border-yellow-300 
           shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_4px_6px_rgba(0,0,0,0.4)] 
           hover:shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_0_20px_5px_rgba(253,224,71,0.8)] 
@@ -175,8 +175,8 @@
   Positions
 </a>
 
-<!-- Pink - Strategies -->
-<a href="strategies.html"
+<!-- Pink - Support -->
+<a href="support.html"
    class="px-4 py-2 rounded bg-gray-900 text-white border border-pink-400 
           shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_4px_6px_rgba(0,0,0,0.4)] 
           hover:shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_0_20px_5px_rgba(244,114,182,0.8)] 
@@ -234,7 +234,7 @@
   </div>
 
   <!-- uP&L Box -->
-  <div class="bg-white/10 backdrop-blur-xl rounded-xl p-6 shadow-xl w-full border border-pink-400 shadow-pink-500/50 text-white hover:shadow-pink-400 transition duration-300">
+  <div class="bg-white/10 backdrop-blur-xl rounded-xl p-6 shadow-xl w-full border border-pink-400 shadow-pink-500/50 text-white hover:shadow-pink-400 transition duration-300 hover:bump">
     <h2 class="text-lg font-semibold mb-4 text-white-300 drop-shadow">uP&amp;L</h2>
     <div class="space-y-2">
       <div class="flex justify-between">
@@ -257,7 +257,7 @@
   </div>
 
   <!-- Funds Distribution Box -->
-  <div class="bg-white/10 backdrop-blur-xl rounded-xl p-6 shadow-xl w-full border border-yellow-400 shadow-yellow-500/40 text-white hover:shadow-yellow-300 transition duration-300">
+  <div class="bg-white/10 backdrop-blur-xl rounded-xl p-6 shadow-xl w-full border border-yellow-400 shadow-yellow-500/40 text-white hover:shadow-yellow-300 transition duration-300 hover:bump">
     <h2 class="text-lg font-semibold mb-4 text-white-300 drop-shadow">Funds Distribution (USDT)</h2>
     <div class="space-y-2">
       <div class="flex justify-between">
@@ -290,13 +290,13 @@
 <div class="flex gap-4 w-full">
 
   <!-- Balance Graph -->
-  <div class="flex-1 bg-black/40 backdrop-blur-md rounded-xl p-4 h-[300px] border-2 border-cyan-400 shadow-cyan-500/50 text-white transition duration-300 hover:shadow-[0_0_25px_5px_rgba(34,211,238,0.8)]">
+  <div class="flex-1 bg-black/40 backdrop-blur-md rounded-xl p-4 h-[300px] border-2 border-cyan-400 shadow-cyan-500/50 text-white transition duration-300 hover:shadow-[0_0_25px_5px_rgba(34,211,238,0.8)] hover:bump">
     <h2 class="text-lg font-semibold mb-2 text-white">Balance Graph</h2>
     <canvas id="balanceChart" class="w-full h-full bg-transparent text-white"></canvas>
   </div>
 
   <!-- Weekly Revenue Chart -->
-  <div class="flex-1 bg-black/40 backdrop-blur-md rounded-xl p-4 h-[300px] border-2 border-purple-400 text-white transition duration-300 hover:shadow-[0_0_25px_5px_rgba(192,132,252,0.8)]">
+  <div class="flex-1 bg-black/40 backdrop-blur-md rounded-xl p-4 h-[300px] border-2 border-purple-400 text-white transition duration-300 hover:shadow-[0_0_25px_5px_rgba(192,132,252,0.8)] hover:bump">
     <h2 class="text-lg font-semibold mb-2 text-white">Weekly Revenue</h2>
     <canvas id="revenueChart" class="w-full h-full bg-transparent text-white"></canvas>
   </div>
@@ -306,7 +306,7 @@
 <div class="flex gap-4 mt-4 w-full">
 
   <!-- Daily Balance & PnL Table -->
-  <div class="flex-1 bg-black/40 backdrop-blur-md text-white rounded-xl p-4 h-[300px] overflow-y-auto border-2 border-emerald-400 transition duration-300 hover:shadow-[0_0_25px_5px_rgba(52,211,153,0.7)]">
+  <div class="flex-1 bg-black/40 backdrop-blur-md text-white rounded-xl p-4 h-[300px] overflow-y-auto border-2 border-emerald-400 transition duration-300 hover:shadow-[0_0_25px_5px_rgba(52,211,153,0.7)] hover:bump">
     <h2 class="text-lg font-semibold mb-2 text-white">Daily Balance &amp; P&amp;L</h2>
     <table class="w-full text-sm text-left">
       <thead class="bg-emerald-900/80 text-white font-semibold">
@@ -350,7 +350,7 @@
  
 
   <!-- Best Trading Pairs -->
-  <div class="flex-1 bg-black/40 backdrop-blur-md text-white rounded-xl p-4 h-[300px] overflow-y-auto border-2 border-emerald-400 transition duration-300 hover:shadow-[0_0_25px_5px_rgba(52,211,153,0.7)]">
+  <div class="flex-1 bg-black/40 backdrop-blur-md text-white rounded-xl p-4 h-[300px] overflow-y-auto border-2 border-emerald-400 transition duration-300 hover:shadow-[0_0_25px_5px_rgba(52,211,153,0.7)] hover:bump">
     <h2 class="text-lg font-semibold mb-2 text-white-300">Best Trading Pairs</h2>
     <ul class="text-sm space-y-2">
       <li class="flex justify-between"><span>BTC/USDT:USDT</span><span class="text-white-300">$125.28</span></li>
@@ -363,7 +363,7 @@
 
 </div>
 <!-- Active Positions (full-width) -->
-<div class="flex-1 bg-black/40 backdrop-blur-md text-white rounded-xl p-4 h-[300px] overflow-y-auto border-2 border-emerald-400 transition duration-300 hover:shadow-[0_0_25px_5px_rgba(52,211,153,0.7)]">
+<div class="flex-1 bg-black/40 backdrop-blur-md text-white rounded-xl p-4 h-[300px] overflow-y-auto border-2 border-emerald-400 transition duration-300 hover:shadow-[0_0_25px_5px_rgba(52,211,153,0.7)] hover:bump">
   <h2 class="text-lg font-semibold mb-4 text-white-300 drop-shadow">Active Positions</h2>
   <table class="min-w-full table-auto text-sm text-left text-white">
     <thead class="bg-gray-800 text-white-200 font-semibold">
@@ -446,7 +446,7 @@
 <!-- View All Positions Button -->
 <div class="flex justify-center mt-4">
   <a href="F:/crypto-dashboard-prototype/crypto-dashboard-prototype/admin/positions.html">
-    <button class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded shadow border border-blue-200 shadow-blue-500/50 hover:shadow-[0_0_15px_6px_rgba(59,130,246,0.7)] transition-shadow duration-300">
+    <button class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded shadow border border-blue-200 shadow-blue-500/50 hover:shadow-[0_0_15px_6px_rgba(59,130,246,0.7)] transition-shadow duration-300 hover:bump">
       View All Positions
     </button>
   </a>
@@ -577,6 +577,7 @@ new Chart(revenueCtx, {
 
 </body>
 </html>
+
 
 
 
