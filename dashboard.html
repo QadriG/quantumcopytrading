@@ -106,6 +106,9 @@
 
 <body class="font-sans relative text-white">
 
+  <audio id="hover-sound" preload="auto">
+    <source src="assets/click.mp3" type="audio/mpeg">
+  </audio>
   
   <!-- 🌌 Background Video -->
   <video autoplay muted loop playsinline class="fixed top-0 left-0 w-full h-full object-cover z-[-10] brightness-90 blur-sm">
@@ -513,15 +516,6 @@ new Chart(balanceCtx, {
       : 'rgba(239,68,68,1)'; // red
   });
 
-   onst hoverAudio = document.getElementById('hover-sound');
-
-    function playHoverSound() {
-      if (!hoverAudio.paused) {
-        hoverAudio.currentTime = 0; // Restart if already playing
-      }
-      hoverAudio.play().catch(() => {}); // Prevent error on rapid hover
-    }
- 
   // Weekly Revenue Chart
   const revenueCtx = document.getElementById('revenueChart').getContext('2d');
 new Chart(revenueCtx, {
@@ -567,11 +561,34 @@ new Chart(revenueCtx, {
     }
   }
 });
+  const audio = document.getElementById("hover-sound");
+
+    // User must click at least once to allow sound (browser rule)
+    document.body.addEventListener('click', () => {
+      audio.play().then(() => {
+        audio.pause();
+        audio.currentTime = 0;
+      }).catch(e => console.log('Interaction required for audio'));
+    }, { once: true });
+
+    function playSound() {
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      }
+    }
+
+    // Apply to all hover targets
+    const targets = document.querySelectorAll("button, a, tr");
+    targets.forEach(el => {
+      el.addEventListener("mouseenter", playSound);
+    });
 
 </script>
 
 </body>
 </html>
+
 
 
 
