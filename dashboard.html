@@ -578,9 +578,9 @@ new Chart(revenueCtx, {
       }
     }
 
-    // Apply to all hover targets
-    const targets = document.querySelectorAll("button, a, tr");
-    targets.forEach(el => {
+    // 🔊 Only apply to sidebar links
+    const sidebarLinks = document.querySelectorAll("#sidebar .sidebar-link");
+    sidebarLinks.forEach(el => {
       el.addEventListener("mouseenter", playSound);
     });
 
@@ -588,6 +588,7 @@ new Chart(revenueCtx, {
 
 </body>
 </html>
+
 
 
 
