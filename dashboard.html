@@ -86,18 +86,6 @@
     .dark .bg-white { background-color: #1f2937 !important; }
     .dark .bg-gray-200 { background-color: #374151 !important; }
   </style>
-  <script>
-   function playHoverSound() {
-    const hoverSound = document.getElementById("hoverSound");
-    hoverSound.currentTime = 0;
-    hoverSound.play().catch(() => {});
-  }
-
-  // Attach to all sidebar buttons
-  document.querySelectorAll("a").forEach(button => {
-    button.addEventListener("mouseenter", playHoverSound);
-  });
-</script>
 <style>
   /* Bounce / Spring (4D bump) effect */
   .hover\:bump:hover {
@@ -138,12 +126,10 @@
   <nav class="flex flex-col space-y-3">
 
  <!-- Cyan - Dashboard -->
-<a href="dashboard.html"
-   onmouseenter="playHoverSound()"
-   class="px-4 py-2 rounded bg-gray-900 text-white border border-cyan-400 
+<a href="dashboard.html" class="px-4 py-2 rounded bg-gray-900 text-white border border-cyan-400 
           shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_4px_6px_rgba(0,0,0,0.4)] 
           hover:shadow-[inset_2px_2px_5px_rgba(255,255,255,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.6),0_0_20px_5px_rgba(34,211,238,0.8)] 
-          transition-all duration-300 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 hover:bump">
+          transition-all duration-300 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 hover:bump onmouseenter="playHoverSound()"">
   Dashboard
 </a>
 
@@ -527,6 +513,15 @@ new Chart(balanceCtx, {
       : 'rgba(239,68,68,1)'; // red
   });
 
+   onst hoverAudio = document.getElementById('hover-sound');
+
+    function playHoverSound() {
+      if (!hoverAudio.paused) {
+        hoverAudio.currentTime = 0; // Restart if already playing
+      }
+      hoverAudio.play().catch(() => {}); // Prevent error on rapid hover
+    }
+ 
   // Weekly Revenue Chart
   const revenueCtx = document.getElementById('revenueChart').getContext('2d');
 new Chart(revenueCtx, {
@@ -577,6 +572,7 @@ new Chart(revenueCtx, {
 
 </body>
 </html>
+
 
 
 
